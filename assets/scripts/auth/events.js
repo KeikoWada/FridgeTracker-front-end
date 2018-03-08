@@ -6,9 +6,12 @@ const ui = require('./ui')
 // const signInOut = require('./signinOut')
 
 const onSignUp = function (event) {
+  console.log(event)
   event.preventDefault()
 
   const data = getFormFields(this)
+  console.log(data)
+  console.log(this)
   api.signUp(data)
     .then(ui.signUpSuccess)
     .catch(ui.signUpFailure)

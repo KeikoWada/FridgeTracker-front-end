@@ -2,7 +2,8 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://fridgetracker-kw.herokuapp.com/'
+    production: 'https://fridgetracker-kw.herokuapp.com',
+    development: 'http://localhost:4741'
   }
 }
 
