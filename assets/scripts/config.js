@@ -2,8 +2,10 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com'
+    production: 'https://fridgetracker-kw.herokuapp.com/'
   }
 }
 
 module.exports = config
+
+// 'https://ga-wdi-boston.herokuapp.com'

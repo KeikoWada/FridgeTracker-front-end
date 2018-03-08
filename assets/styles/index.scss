@@ -1,2 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+h1 {
+
+}
+
+#signUP {
+  background-image: url('https://i.imgur.com/6naE473.jpg');
+  background-size: cover;
+  background-position: center;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  height: 100vh;
+  text-align: center;
+}
