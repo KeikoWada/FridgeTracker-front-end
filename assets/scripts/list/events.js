@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
+const store = require('../store')
 // const store = require('../store')
 
 const onCreateList = function (event) {
@@ -28,12 +29,12 @@ const onCreateList = function (event) {
 const onUpdate = function (event) {
   event.preventDefault()
   const data = {
-    date: date,
-    item_name: data.item_name,
-    category: data.category
+    date: store.date,
+    item_name: store.item_name,
+    category: store.category
   }
 
-  api.updateGame(data)
+  api.updateList(data)
     .then(ui.onUpdateSuccess)
     .catch(ui.onUpdateFailure)
 }

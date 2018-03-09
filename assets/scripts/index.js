@@ -9,6 +9,7 @@ $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
   $('#create').on('submit', listEvents.onCreateList)
+  $('#create').on('submit', listEvents.onUpdate)
 })
 
 // use require with a reference to bundle the file and use it in this file

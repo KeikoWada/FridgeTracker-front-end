@@ -17,9 +17,9 @@ const create = function (data) {
   })
 }
 
-const updateList = function (data) {
+const updateList = function (date, item_name, category) {
   return $.ajax({
-    url: config.apiOrigin + '/expiration_dates/' + store.game.id,
+    url: config.apiOrigin + '/expiration_dates/' + store.id,
     method: 'PATCH',
     headers: {
       contentType: 'application/json',
@@ -31,9 +31,9 @@ const updateList = function (data) {
     },
     data: {
       'expiration_date': {
-        'date': data.date,
-        'item_name': data.item_name,
-        'category': data.category
+        'date': date,
+        'item_name': item_name,
+        'category': category
       }
     }
   })

@@ -1,12 +1,14 @@
 'use strict'
 const store = require('../store')
-const listEvents = require('./events')
+// const listEvents = require('./events')
 
 const onCreateSuccess = function (data) {
   // $('#gamePage').toggle('slow')
   console.log('ui')
-  listEvents.onUpdate()
-  store.game = data.game
+  store.data = data.store
+  console.log(data)
+  console.log(store.data)
+  console.log('1')
 }
 
 const onCreateFailure = function () {
@@ -19,22 +21,22 @@ const onCreateFailure = function () {
 //   store.game = data.game
 // }
 //
-// const onUpdateSuccess = function (data) {
-//   // $('#checkmessage').text('game successfully updated')
-//   // $('#checkmessage').css('background-color', 'green')
-//   store.game = data.game
+const onUpdateSuccess = function (data) {
+  // $('#checkmessage').text('game successfully updated')
+  // $('#checkmessage').css('background-color', 'green')
+  store.data = data.store
+}
+
+// const onUpdateFailure = function (error) {
+//
+//   console.log(error)
 // }
-//
-// // const onUpdateFailure = function (error) {
-// //
-// //   console.log(error)
-// // }
-//
-// // const onUpdateFailure = function () {
-// //   $('#checkmessage').text('Error on updating the game')
-// //   $('#checkmessage').css('background-color', 'red')
-// // }
-//
+
+const onUpdateFailure = function () {
+  $('#checkmessage').text('Error on updating the game')
+  $('#checkmessage').css('background-color', 'red')
+}
+
 // const onTrackSuccess = function (data) {
 //   data.game = store.game
 //   // console.log(store.game)
@@ -54,9 +56,9 @@ const onCreateFailure = function () {
 
 module.exports = {
   onCreateSuccess,
-  onCreateFailure
-  // onUpdateSuccess,
-  // onUpdateFailure,
+  onCreateFailure,
+  onUpdateSuccess,
+  onUpdateFailure
   // onTrackSuccess,
   // onTrackSuccessTwo,
   // onTrackFailure,
