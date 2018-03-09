@@ -17,31 +17,28 @@ const create = function (data) {
   })
 }
 
-// const updateGame = function (data) {
-//   // console.log(data)
-//   return $.ajax({
-//     url: config.apiOrigin + '/games/' + store.game.id,
-//     method: 'PATCH',
-//     headers: {
-//       contentType: 'application/json',
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     success: function (response) {
-//       // console.log('AJAX response from game server', response)
-//       return response
-//     },
-//     data: {
-//       'game': {
-//         'cell': {
-//           'index': data.index,
-//           'value': store.player
-//         },
-//         'over': data.over // data.over
-//       }
-//     }
-//   })
-// }
-//
+const updateList = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/expiration_dates/' + store.game.id,
+    method: 'PATCH',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    success: function (response) {
+      // console.log('AJAX response from game server', response)
+      return response
+    },
+    data: {
+      'expiration_date': {
+        'date': data.date,
+        'item_name': data.item_name,
+        'category': data.category
+      }
+    }
+  })
+}
+
 // const tracker = function () {
 //   return $.ajax({
 //     url: config.apiOrigin + '/games/',
@@ -54,7 +51,7 @@ const create = function (data) {
 // }
 
 module.exports = {
-  create
-  // updateGame,
+  create,
+  updateList
   // tracker
 }

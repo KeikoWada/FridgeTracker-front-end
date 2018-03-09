@@ -1,9 +1,11 @@
 'use strict'
 const store = require('../store')
+const listEvents = require('./events')
 
 const onCreateSuccess = function (data) {
   // $('#gamePage').toggle('slow')
   console.log('ui')
+  listEvents.onUpdate()
   store.game = data.game
 }
 

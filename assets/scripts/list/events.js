@@ -25,19 +25,19 @@ const onCreateList = function (event) {
 //     .then(ui.onCreateNewSuccess)
 // }
 //
-// const onUpdate = function (event) {
-//   event.preventDefault()
-//   const data = {
-//     id: event.target.id,
-//     value: store.player,
-//     over: store.over
-//   }
-//
-//   api.updateGame(data)
-//     .then(ui.onUpdateSuccess)
-//     .catch(ui.onUpdateFailure)
-// }
-//
+const onUpdate = function (event) {
+  event.preventDefault()
+  const data = {
+    date: date,
+    item_name: data.item_name,
+    category: data.category
+  }
+
+  api.updateGame(data)
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onUpdateFailure)
+}
+
 // const onTrack = function (event) {
 //   event.preventDefault()
 //   api.tracker(event)
@@ -50,8 +50,8 @@ const onCreateList = function (event) {
 //     .then(ui.onTrackSuccessTwo)
 // }
 module.exports = {
-  onCreateList
-  // onUpdate,
+  onCreateList,
+  onUpdate
   // onTrack,
   // onCreateNewGame,
   // onTrackTwo

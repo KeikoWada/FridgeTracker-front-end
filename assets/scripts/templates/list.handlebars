@@ -1,0 +1,19 @@
+<ul>
+{{#each expiration_dates as |date|}}
+<li id='data' data-id="{{expiration_date.id}}">List: {{expiration_date.item}}
+  <button id="remove" class="btn btn-default">remove Book!</button>
+  <!-- {{> partial}}
+  Don't uncomment yet -->
+
+ <!-- Developers, why are we using data-id and not just id? -->
+
+  <div>
+    {{#if expiration_date.date}}
+      {{expiration_date.item}}
+    {{else}}
+      Nothing to waste! Great job!
+    {{/if}}
+  </div>
+</li>
+{{/each}}
+</ul>
