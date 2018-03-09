@@ -53,22 +53,22 @@
               <h4 class="modal-title" id="myModalLabel">Change Password</h4>
             </div>
             <div class="modal-body">
-              <form class="form-inline" id="changemyModal">
+              <form class="form" id="changeModal">
             <div class="form-group">
                 <label class="sr-only" for="exampleInputPassword3">Old Password</label>
-                <input type="password" class="form-control" id="oldpw" placeholder="Password">
+                <input type="password" class="form-control" id="oldpw" name="passwords[old]" placeholder="Old Password">
             </div>
             <div class="form-group">
                 <label class="sr-only" for="exampleInputPassword3">New Password</label>
-                <input type="password" class="form-control" id="newpw" placeholder="Password">
+                <input type="password" class="form-control" id="newpw" name="passwords[new]" placeholder="New Password">
             </div>
-            </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="submit" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save changes</button>
               </div>
             </div><!-- /.modal-content -->
+          </form>
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
       </div><!-- /.modal -->
@@ -94,30 +94,23 @@
         <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
       </div>
       <div class="modal-body">
-        <div class="row">
-          <div class="col-md-4">.col-md-4</div>
-          <div class="col-md-4 col-md-offset-4">.col-md-4 .col-md-offset-4</div>
-        </div>
-        <div class="row">
-          <div class="col-md-3 col-md-offset-3">.col-md-3 .col-md-offset-3</div>
-          <div class="col-md-2 col-md-offset-4">.col-md-2 .col-md-offset-4</div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">.col-md-6 .col-md-offset-3</div>
-        </div>
-        <div class="row">
-          <div class="col-sm-9">
-            Level 1: .col-sm-9
-            <div class="row">
-              <div class="col-xs-8 col-sm-6">
-                Level 2: .col-xs-8 .col-sm-6
-              </div>
-              <div class="col-xs-4 col-sm-6">
-                Level 2: .col-xs-4 .col-sm-6
-              </div>
-            </div>
+        <!-- content within a model of create list -->
+        <form id="create">
+          <div class="form-group">
+            <label for="expiration date">Expiration Date</label>
+            <input type="integer" class="form-control" id="expiration date" name="expiration_date[date]" placeholder="Expiration Date">
           </div>
-        </div>
+          <div class="form-group">
+            <label for="item">Item</label>
+            <input type="text" class="form-control" id="item" name="expiration_date[item_name]" placeholder="Item">
+          </div>
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input type="text" class="form-control" id="category" name="expiration_date[category]" placeholder="Category">
+          </div>
+          <button type="submit" class="btn btn-default">Create list</button>
+        </form>
+        <!-- content within a model of create list end -->
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -128,23 +121,6 @@
 </div><!-- /.modal -->
 <!-- end create list modal -->
 
-      <!-- content within a model of create list -->
-      <form id="create">
-        <div class="form-group">
-          <label for="expiration date">Expiration Date</label>
-          <input type="integer" class="form-control" id="expiration date" name="expiration_date[date]" placeholder="Expiration Date">
-        </div>
-        <div class="form-group">
-          <label for="item">Item</label>
-          <input type="text" class="form-control" id="item" name="expiration_date[item_name]" placeholder="Item">
-        </div>
-        <div class="form-group">
-          <label for="category">Category</label>
-          <input type="text" class="form-control" id="category" name="expiration_date[category]" placeholder="Category">
-        </div>
-        <button type="submit" class="btn btn-default">Create list</button>
-      </form>
-      <!-- content within a model of create list end -->
 
     </body>
 </html>
