@@ -62,12 +62,10 @@ const onDeleteList = (event) => {
 
 const addHandlers = () => {
   $('#create').on('submit', onCreateList)
-  $('#add').on('click', onUpdate)
+  $('#get').on('click', onUpdate)
   $('#showAll').on('click', onShowAll)
-  $('#remove').on('click', onDeleteList)
-  // $('body').on('click', 'li', function () {
-  //   $(this).closest('li').hide()
-  // })
+  // $('#remove').on('click', onDeleteList)
+  $('body').on('click', '#remove', onDeleteList)
 }
 
 module.exports = {
