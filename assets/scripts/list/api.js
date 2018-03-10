@@ -39,19 +39,19 @@ const updateList = function (date, item_name, category) {
   })
 }
 
-// const tracker = function () {
-//   return $.ajax({
-//     url: config.apiOrigin + '/games/',
-//     method: 'GET',
-//     headers: {
-//       contentType: 'application/json',
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const showAll = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/expiration_dates/',
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   create,
-  updateList
-  // tracker
+  updateList,
+  showAll
 }

@@ -5,7 +5,7 @@ h1 {
 
 }
 
-#signUP {
+#firstPage {
   background-image: url('https://i.imgur.com/6naE473.jpg');
   background-size: cover;
   background-position: center;
@@ -14,4 +14,46 @@ h1 {
   margin-bottom: 0;
   height: 100vh;
   text-align: center;
+}
+
+#list {
+  display: none;
+  // background-image: url('https://i.imgur.com/ysdYx0h.jpg');
+  // background-size: cover;
+  // background-position: center;
+  // margin-left: 0;
+  // margin-right: 0;
+  // margin-bottom: 0;
+  // height: 100vh;
+  // text-align: center;
+}
+
+
+.grocery-board {
+  border: 2px solid black;
+}
+
+.grocery-line {
+  border: 1px solid black;
+  margin-bottom: 2px;
+}
+
+.grocery-list-title {
+  display: none;
+  margin-top: 100px;
+}
+
+.ingredient-board {
+  background-color: white;
+  display: none;
+  height: 700px;
+  margin-top: 10px;
+  overflow-y: scroll;
+  padding: 15px;
+  width: 100%;
+}
+
+.ingredient-list {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
 }

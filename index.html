@@ -12,7 +12,7 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <div id="signUP">
+      <div id="firstPage">
         <h1>Fridge Tracker</h1>
 
         <form id="sign-up" class="auth">
@@ -39,6 +39,15 @@
       <!-- list page -->
       <div id="list">
         <h1>List page</h1>
+<!-- horizen buttons -->
+<ul>
+  <li><a href="#change">Change Password</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+<!-- horizen buttons end -->
+
 
 <!-- change password button -->
         <button class="btn btn-primary btn-lg" id="change" data-toggle="modal" data-target="#changemyModal">
@@ -71,17 +80,15 @@
           </form>
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
-      </div><!-- /.modal -->
+      <!-- </div><!-- /.modal -->
 <!-- end change password button -->
 
   <!-- sign-out -->
-      <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-      Sign Out
-      </button>
+    <button type="submit" id="signout">sign Out</button>
 
 <!-- create list -->
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createmyModal">
+<button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createmyModal">
   Create List
 </button>
 
@@ -116,11 +123,19 @@
     </form>
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+</div>
+</div>
 <!-- end create list modal -->
+<button type="submit" id="showAll">See All List</button>
+<button type="submit" id="update">See one list</button>
+<!-- <p>
+  <button type="button" id="showAll" class="btn btn-primary">See All List</button>
+  <button type="button" id="showAll" class="btn btn-default">All List</button>
+</p> -->
 
-<!-- all list  -->
-<div id="content" class="content">
-  </div>
-<!-- end all list -->
+<p id="content" class="content">
+</p>
+
+</div>
     </body>
 </html>

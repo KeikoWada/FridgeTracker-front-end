@@ -14,7 +14,7 @@ const onCreateList = function (event) {
   console.log(data)
 
   api.create(data)
-    .then(ui.onCreateSuccess)
+    .then(onShowAll)
     .catch(ui.onCreateFailure)
 }
 
@@ -39,21 +39,21 @@ const onUpdate = function (event) {
     .catch(ui.onUpdateFailure)
 }
 
-// const onTrack = function (event) {
-//   event.preventDefault()
-//   api.tracker(event)
-//     .then(ui.onTrackSuccess)
-// }
-//
+const onShowAll = function (event) {
+  api.showAll(event)
+    .then(ui.onShowAllSuccess)
+}
+
 // const onTrackTwo = function (event) {
 //   event.preventDefault()
 //   api.tracker(event)
 //     .then(ui.onTrackSuccessTwo)
 // }
+
 module.exports = {
   onCreateList,
-  onUpdate
-  // onTrack,
+  onUpdate,
+  onShowAll
   // onCreateNewGame,
   // onTrackTwo
 }

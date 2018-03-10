@@ -1,14 +1,11 @@
 'use strict'
 const store = require('../store')
 // const listEvents = require('./events')
+const showlistsTemplate = require('../templates/list.handlebars')
 
 const onCreateSuccess = function (data) {
   // $('#gamePage').toggle('slow')
-  console.log('ui')
-  store.data = data.store
-  console.log(data)
-  console.log(store.data)
-  console.log('1')
+  store.data = data
 }
 
 const onCreateFailure = function () {
@@ -24,7 +21,7 @@ const onCreateFailure = function () {
 const onUpdateSuccess = function (data) {
   // $('#checkmessage').text('game successfully updated')
   // $('#checkmessage').css('background-color', 'green')
-  store.data = data.store
+  store.data = data
 }
 
 // const onUpdateFailure = function (error) {
@@ -37,18 +34,20 @@ const onUpdateFailure = function () {
   $('#checkmessage').css('background-color', 'red')
 }
 
-// const onTrackSuccess = function (data) {
-//   data.game = store.game
-//   // console.log(store.game)
-//   $('#messageTwo').text(store.user.email + ' played ' + data.games.length + ' times! great job!')
-//   $('#messageTwo').css('background-color', 'gray')
-//   $('#messageTwo').delay(5000).queue(function () {
-//     $(this).removeAttr('style')
-//     $(this).text('')
-//   })
-//   // console.log(data)
-// }
-//
+const onShowAllSuccess = function (data) {
+  store.data = data
+  const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
+  $('#content').append(showlistsHtml)
+  console.log(data.expiration_dates)
+//  $('#content').text(store.data)
+
+  // $('#messageTwo').css('background-color', 'gray')
+  // $('#messageTwo').delay(5000).queue(function () {
+  //   $(this).removeAttr('style')
+  //   $(this).text('')
+  // })
+}
+
 // const onTrackSuccessTwo = function (data) {
 //   data.game = store.game
 //   $('#signInMessage').text(store.user.email + ' played ' + data.games.length + ' times! great job!')
@@ -58,8 +57,8 @@ module.exports = {
   onCreateSuccess,
   onCreateFailure,
   onUpdateSuccess,
-  onUpdateFailure
-  // onTrackSuccess,
+  onUpdateFailure,
+  onShowAllSuccess
   // onTrackSuccessTwo,
   // onTrackFailure,
   // onCreateNewSuccess

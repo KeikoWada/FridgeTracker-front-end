@@ -17,8 +17,8 @@ const signInSuccess = function (data) {
   $('input').val('')
   $('#message').text('Signed in successfully')
   $('#message').css('background-color', 'green')
-  // $('.secondPage').toggle('slow')
-  // $('#first-page').toggle('slow')
+  $('#list').toggle('slow')
+  $('#firstPage').toggle('slow')
   // $('#message').dequeue()
   store.user = data.user
 }
@@ -45,8 +45,8 @@ const signOutSuccess = function () {
   $('input').val('')
   $('#message').text('Signed out successfully')
   $('#message').css('color', 'green')
-  $('.gamePage').toggle('slow')
-  $('#first-page').toggle('slow')
+  $('#list').toggle('slow')
+  $('#firstPage').toggle('slow')
   $('#message').delay(3000).queue(function () {
     $('#message').text('Welcome! Are you ready to play game?', 'green')
   })
