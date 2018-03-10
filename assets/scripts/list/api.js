@@ -50,8 +50,32 @@ const showAll = function () {
   })
 }
 
+const getList = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/expiration_dates/' + store.id,
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteList = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/expiration_dates/' + store.id,
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   create,
   updateList,
-  showAll
+  showAll,
+  getList,
+  deleteList
 }

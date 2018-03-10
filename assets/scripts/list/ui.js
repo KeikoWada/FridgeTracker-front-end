@@ -24,11 +24,6 @@ const onUpdateSuccess = function (data) {
   store.data = data
 }
 
-// const onUpdateFailure = function (error) {
-//
-//   console.log(error)
-// }
-
 const onUpdateFailure = function () {
   $('#checkmessage').text('Error on updating the game')
   $('#checkmessage').css('background-color', 'red')
@@ -38,8 +33,7 @@ const onShowAllSuccess = function (data) {
   store.data = data
   const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
   $('#content').append(showlistsHtml)
-  console.log(data.expiration_dates)
-//  $('#content').text(store.data)
+  // console.log(data.expiration_dates)
 
   // $('#messageTwo').css('background-color', 'gray')
   // $('#messageTwo').delay(5000).queue(function () {
@@ -48,18 +42,20 @@ const onShowAllSuccess = function (data) {
   // })
 }
 
-// const onTrackSuccessTwo = function (data) {
-//   data.game = store.game
-//   $('#signInMessage').text(store.user.email + ' played ' + data.games.length + ' times! great job!')
-// }
+const removeList = (event) => {
+  console.log('ui')
+  console.log(event)
+  console.log(event.target)
+  $('.content').empty()
+}
 
 module.exports = {
   onCreateSuccess,
   onCreateFailure,
   onUpdateSuccess,
   onUpdateFailure,
-  onShowAllSuccess
-  // onTrackSuccessTwo,
+  onShowAllSuccess,
+  removeList
   // onTrackFailure,
   // onCreateNewSuccess
 }

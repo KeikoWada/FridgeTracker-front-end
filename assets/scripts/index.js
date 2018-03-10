@@ -8,9 +8,10 @@ const listEvents = require('./list/events')
 $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
-  $('#create').on('submit', listEvents.onCreateList)
-  $('#update').on('click', listEvents.onUpdate)
-  $('#showAll').on('click', listEvents.onShowAll)
+  listEvents.addHandlers()
+  // $('#create').on('submit', listEvents.onCreateList)
+  // $('#add').on('click', listEvents.onUpdate)
+  // $('#showAll').on('click', listEvents.onShowAll)
 })
 
 // use require with a reference to bundle the file and use it in this file
