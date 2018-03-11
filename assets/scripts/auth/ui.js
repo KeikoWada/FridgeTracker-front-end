@@ -31,9 +31,8 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function () {
   $('input').val('')
-  $('.modal-body').text('Change password successfully!')
-  $('.modal-header').hide()
-  $('#saveb').hide()
+  $('#changemyModal').modal('hide')
+  $('#pwsuccessmyModal').modal('show')
 }
 
 const changePasswordFailure = function () {

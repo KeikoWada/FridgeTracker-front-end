@@ -6,9 +6,7 @@ const showlistsTemplate = require('../templates/list.handlebars')
 const onCreateSuccess = function (data) {
   store.data = data
   $('input').val('')
-  $('#createbody').text('create a list successfully!')
-  $('.modal-header').hide()
-  $('.create').hide()
+  $('#createsuccessmyModal').modal('show')
 }
 
 const onCreateFailure = function () {
@@ -38,9 +36,8 @@ const onShowAllSuccess = function (data) {
   $('#content').append(showlistsHtml)
   console.log(data.expiration_dates)
   $('input').val('')
-  $('#create').text('create a list successfully!')
-  $('.modal-header').hide()
-  $('#createb').hide()
+  $('#createmyModal').modal('hide')
+  $('#createsuccessmyModal').modal('show')
   // $('#messageTwo').css('background-color', 'gray')
   // $('#messageTwo').delay(5000).queue(function () {
   //   $(this).removeAttr('style')
