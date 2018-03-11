@@ -41,9 +41,10 @@ const onUpdate = function (event) {
   // }
 
   api.updateList(data)
-    .then(ui.onShowAll)
-    // .then(onGetList)
-    .catch(ui.onUpdateFailure)
+    .then(() => api.showAll(event))
+    .then($('.content').empty())
+    .then(ui.onUpdateSuccess)
+    .catch(ui.failure)
 }
 
 const onShowAll = function (event) {

@@ -20,14 +20,18 @@ const onGetOneSuccess = function (data) {
 }
 
 const onUpdateSuccess = function (data) {
-  // $('#checkmessage').text('game successfully updated')
-  // $('#checkmessage').css('background-color', 'green')
   store.data = data
+  const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
+  $('input').val('')
+  $('#content').append(showlistsHtml)
+  $('#updatemyModal').modal('hide')
+  $('#updatesuccessModal').modal('show')
 }
 
 const onUpdateFailure = function () {
-  $('#checkmessage').text('Error on updating the game')
-  $('#checkmessage').css('background-color', 'red')
+  $('input').val('')
+  $('#updatemyModal').modal('hide')
+  $('#failureModal').modal('show')
 }
 
 const onShowAllSuccess = function (data) {
