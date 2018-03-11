@@ -16,8 +16,10 @@ const onCreateList = function (event) {
   console.log(data.expiration_dates)
 
   api.create(data)
-    .then(onShowAll)
-    .catch(ui.onCreateFailure)
+    .then(() => api.showAll(event))
+    .then($('.content').empty())
+    .then(ui.onCreateSuccess)
+    .catch(ui.onCreatefailure)
 }
 
 const onGetOne = function (event) {
@@ -44,7 +46,7 @@ const onUpdate = function (event) {
     .then(() => api.showAll(event))
     .then($('.content').empty())
     .then(ui.onUpdateSuccess)
-    .catch(ui.failure)
+    .catch(ui.onUpdateFailure)
 }
 
 const onShowAll = function (event) {
