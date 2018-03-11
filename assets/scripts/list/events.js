@@ -4,7 +4,7 @@ const getFormFields = require('../../../lib/get-form-fields')
 const api = require('./api')
 const ui = require('./ui')
 const store = require('../store')
-// const store = require('../store')
+// const list = require('../templates/list.handlebars')
 
 const onCreateList = function (event) {
   event.preventDefault()
@@ -59,11 +59,25 @@ const onShowAll = function (event) {
 //     .catch(ui.onGetListFailure)
 // }
 
+// const onDeleteList = (event) => {
+//   store.data = this.data
+//   console.log(store.data)
+//   // store.id = list.expiration_date.id
+//   event.preventDefault()
+//   api.deleteList(this.id)
+//     .then(ui.onRemoveListSuccess)
+//     .catch(ui.onRemoveListFailure)
+// }
+
 const onDeleteList = (event) => {
   event.preventDefault()
-  api.deleteList(event)
-    .then(ui.onRemoveListSuccess)
-    .catch(ui.onRemoveListFailure)
+
+  // grab the `data-id` attribute
+  const id = event.target.dataset.id
+
+  api.deleteList(id)
+    .then(() => onShowAll(event)) // after deleting a list, refetch all books
+    .catch(ui.deletefailure)
 }
 
 const addHandlers = () => {

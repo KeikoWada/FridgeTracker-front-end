@@ -1,21 +1,25 @@
 <ul>
 {{#each lists as |expiration_date|}}
-<li id='data' data-id="{{expiration_date.id}}">Expiration Date: {{expiration_date.item}}
-  <button id="edit" class="btn btn-default">Edit item</button>
-  <button id="remove" class="btn btn-default">remove item</button>
   <!-- {{> partial}} -->
 
 
  <!-- Developers, why are we using data-id and not just id? -->
-
-  <div id="table">
+ <div>
     {{#if expiration_date.date}}
-      {{expiration_date.id}}
-      {{expiration_date.date}}
-      {{expiration_date.item_name}}
-      {{expiration_date.category}}
+      <ul>
+      <li class="list-group-date" data-id="{{expiration_date.id}}">Expiration Date: {{expiration_date.date}} </li>
+      <li class="list-group-item"> ID : {{expiration_date.id}} </li>
+      <li class="list-group-item"> Item : {{expiration_date.item_name}} </li>
+      <li class="list-group-item">  Category: {{expiration_date.category}} </li>
+      <button id="edit" class="btn btn-default">Edit item</button>
+      <button id="remove" class="btn btn-default" data-id="{{expiration_date.id}}">remove item</button>
     {{else}}
-      Nothing to waste! Great job!
+      <li class="list-group-date" data-id="{{expiration_date.id}}">Expiration Date: N/A </li>
+      <li class="list-group-item"> ID : {{expiration_date.id}} </li>
+      <li class="list-group-item"> Item : {{expiration_date.item_name}} </li>
+      <li class="list-group-item">  Category: {{expiration_date.category}} </li>
+      <button id="edit" class="btn btn-default">Edit item</button>
+      <button id="remove" class="btn btn-default" data-id="{{expiration_date.id}}">remove item</button>
     {{/if}}
   </div>
 </li>

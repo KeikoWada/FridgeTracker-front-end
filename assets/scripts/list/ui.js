@@ -46,7 +46,7 @@ const removeList = (event) => {
   console.log('ui')
   console.log(event)
   console.log(event.target)
-  $('#table').empty()
+  $('#table' > 'body').toggle()
 }
 
 module.exports = {

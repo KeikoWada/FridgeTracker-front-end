@@ -2,7 +2,7 @@
 
 const config = require('../config')
 const store = require('../store')
-// const listUi = require('./ui')
+const handlebars = require('../templates/list.handlebars')
 
 const create = function (data) {
   console.log(data)
@@ -77,10 +77,10 @@ const getList = function () {
   })
 }
 
-const deleteList = function () {
-  console.log(store.data.expiration_dates)
+const deleteList = function (id) {
+  console.log(id)
   return $.ajax({
-    url: config.apiOrigin + '/expiration_dates/' + store.data.expiration_dates,
+    url: config.apiOrigin + '/expiration_dates/' + id,
     method: 'DELETE',
     headers: {
       contentType: 'application/json',
