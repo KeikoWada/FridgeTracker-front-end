@@ -47,15 +47,10 @@ const signOutSuccess = function () {
   $('#message').css('color', 'green')
   $('#list').toggle('slow')
   $('#firstPage').toggle('slow')
+  $('.content').empty()
   $('#message').delay(3000).queue(function () {
     $('#message').text('Welcome! Are you ready to play game?', 'green')
   })
-}
-
-const signOutFailure = function () {
-  $('input').val('')
-  $('#messageTwo').text('Error on signing out')
-  $('#messageTwo').css('background-color', 'red')
 }
 
 module.exports = {
@@ -65,6 +60,5 @@ module.exports = {
   signInFailure,
   changePasswordSuccess,
   changePasswordFailure,
-  signOutSuccess,
-  signOutFailure
+  signOutSuccess
 }

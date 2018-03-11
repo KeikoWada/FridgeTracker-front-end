@@ -18,18 +18,18 @@ const create = function (data) {
   })
 }
 
-// const getOne = function (data) {
-//   console.log('api')
-//   return $.ajax({
-//     url: config.apiOrigin + '/expiration_dates' + store.id,
-//     method: 'POST',
-//     headers: {
-//       contentType: 'application/json',
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data
-//   })
-// }
+const getOne = function (data) {
+  console.log('api')
+  return $.ajax({
+    url: config.apiOrigin + '/expiration_dates' + store.id,
+    method: 'POST',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
 
 const updateList = function (data) {
   // console.log(data)
@@ -91,7 +91,7 @@ const deleteList = function (id) {
 
 module.exports = {
   create,
-  // getOne,
+  getOne,
   updateList,
   showAll,
   getList,

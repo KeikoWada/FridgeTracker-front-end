@@ -56,22 +56,16 @@ const onShowAll = function (event) {
     .catch(ui.onShowAllFailure)
 }
 
-// const onGetList = function (event) {
-//   event.preventDefault()
-//   api.getList(event)
-//     .then(ui.onGetListSuccess)
-//     .catch(ui.onGetListFailure)
-// }
+const onShowbyId = function (event) {
+  event.preventDefault()
+  const id = event.target.dataset.id
 
-// const onDeleteList = (event) => {
-//   store.data = this.data
-//   console.log(store.data)
-//   // store.id = list.expiration_date.id
-//   event.preventDefault()
-//   api.deleteList(this.id)
-//     .then(ui.onRemoveListSuccess)
-//     .catch(ui.onRemoveListFailure)
-// }
+  api.getList(id)
+    .then(() => api.showAll(event))
+    .then($('.content').empty())
+    .then(ui.onGetOneSuccess)
+    .catch(ui.onGetListFailure)
+}
 
 const onDeleteList = (event) => {
   event.preventDefault()
@@ -92,6 +86,7 @@ const addHandlers = () => {
   $('#showAll').on('click', onShowAll)
   $('#update').on('submit', onUpdate)
   $('body').on('click', '#remove', onDeleteList)
+  $('#get').on('submit', onShowbyId)
 }
 
 module.exports = {

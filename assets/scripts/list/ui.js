@@ -14,7 +14,8 @@ const onCreateSuccess = function (data) {
 
 const onGetOneSuccess = function (data) {
   store.data = data
-  $('#content').attr(data.expiration_date)
+  $('input').val('')
+  $('#updatemyModal').modal('hide')
 }
 
 const onUpdateSuccess = function (data) {
