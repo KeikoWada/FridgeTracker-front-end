@@ -45,11 +45,13 @@ const onShowAllSuccess = function (data) {
   // })
 }
 
-const removeList = (event) => {
-  console.log('ui')
-  console.log(event)
-  console.log(event.target)
-  $('#table' > 'body').toggle()
+const removeList = (data) => {
+  store.data = data
+  const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
+  $('#content').append(showlistsHtml)
+  // console.log(data.expiration_dates)
+  // $('input').val('')
+  $('#deletemyModal').modal('show')
 }
 
 module.exports = {

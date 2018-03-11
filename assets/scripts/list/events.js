@@ -48,6 +48,7 @@ const onUpdate = function (event) {
 
 const onShowAll = function (event) {
   api.showAll(event)
+    .then($('.content').empty())
     .then(ui.onShowAllSuccess)
     .catch(ui.onShowAllFailure)
 }
@@ -75,8 +76,10 @@ const onDeleteList = (event) => {
   // grab the `data-id` attribute
   const id = event.target.dataset.id
 
-  api.deleteBook(id)
-    .then(() => onShowAll(event)) // after deleting a book, refetch all books
+  api.deleteList(id)
+    .then(() => api.showAll(event))
+    .then($('.content').empty())
+    .then(ui.removeList) // after deleting a book, refetch all books
     .catch(ui.failure)
 }
 

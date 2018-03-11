@@ -2,7 +2,7 @@
 
 const config = require('../config')
 const store = require('../store')
-const handlebars = require('../templates/list.handlebars')
+// const handlebars = require('../templates/list.handlebars')
 
 const create = function (data) {
   console.log(data)
