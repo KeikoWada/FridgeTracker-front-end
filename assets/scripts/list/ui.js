@@ -13,11 +13,11 @@ const onCreateFailure = function () {
   $('#checkmessage').css('background-color', 'red')
 }
 
-// const onCreateNewSuccess = function (data) {
-//   gameLogic.reset()
-//   store.game = data.game
-// }
-//
+const onGetOneSuccess = function (data) {
+  store.data = data
+  $('#content').attr(data.expiration_date)
+}
+
 const onUpdateSuccess = function (data) {
   // $('#checkmessage').text('game successfully updated')
   // $('#checkmessage').css('background-color', 'green')
@@ -33,7 +33,7 @@ const onShowAllSuccess = function (data) {
   store.data = data
   const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
   $('#content').append(showlistsHtml)
-  // console.log(data.expiration_dates)
+  console.log(data.expiration_dates)
 
   // $('#messageTwo').css('background-color', 'gray')
   // $('#messageTwo').delay(5000).queue(function () {
@@ -46,12 +46,13 @@ const removeList = (event) => {
   console.log('ui')
   console.log(event)
   console.log(event.target)
-  $('.content').empty()
+  $('#table').empty()
 }
 
 module.exports = {
   onCreateSuccess,
   onCreateFailure,
+  onGetOneSuccess,
   onUpdateSuccess,
   onUpdateFailure,
   onShowAllSuccess,

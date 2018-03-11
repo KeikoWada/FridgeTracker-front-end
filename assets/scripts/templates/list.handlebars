@@ -1,15 +1,16 @@
 <ul>
 {{#each lists as |expiration_date|}}
 <li id='data' data-id="{{expiration_date.id}}">Expiration Date: {{expiration_date.item}}
-  <button id="add" class="btn btn-default">add item</button>
+  <button id="edit" class="btn btn-default">Edit item</button>
   <button id="remove" class="btn btn-default">remove item</button>
   <!-- {{> partial}} -->
 
 
  <!-- Developers, why are we using data-id and not just id? -->
 
-  <div>
+  <div id="table">
     {{#if expiration_date.date}}
+      {{expiration_date.id}}
       {{expiration_date.date}}
       {{expiration_date.item_name}}
       {{expiration_date.category}}
