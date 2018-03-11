@@ -31,14 +31,15 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function () {
   $('input').val('')
-  $('#messageTwo').text('Change password successfully')
-  $('#messageTwo').css('background-color', 'green')
+  $('.modal-body').text('Change password successfully!')
+  $('.modal-header').hide()
+  $('#saveb').hide()
 }
 
 const changePasswordFailure = function () {
   $('input').val('')
-  $('#messageTwo').text('Error on changing password')
-  $('#messageTwo').css('background-color', 'red')
+  $('.modal-header').text('Old password is invalid, please try again')
+  $('.modal-header').css('color', 'red')
 }
 
 const signOutSuccess = function () {

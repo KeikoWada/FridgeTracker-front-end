@@ -4,8 +4,11 @@ const store = require('../store')
 const showlistsTemplate = require('../templates/list.handlebars')
 
 const onCreateSuccess = function (data) {
-  // $('#gamePage').toggle('slow')
   store.data = data
+  $('input').val('')
+  $('#createbody').text('create a list successfully!')
+  $('.modal-header').hide()
+  $('.create').hide()
 }
 
 const onCreateFailure = function () {
@@ -34,7 +37,10 @@ const onShowAllSuccess = function (data) {
   const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
   $('#content').append(showlistsHtml)
   console.log(data.expiration_dates)
-
+  $('input').val('')
+  $('#create').text('create a list successfully!')
+  $('.modal-header').hide()
+  $('#createb').hide()
   // $('#messageTwo').css('background-color', 'gray')
   // $('#messageTwo').delay(5000).queue(function () {
   //   $(this).removeAttr('style')

@@ -75,9 +75,9 @@ const onDeleteList = (event) => {
   // grab the `data-id` attribute
   const id = event.target.dataset.id
 
-  api.deleteList(id)
-    .then(() => onShowAll(event)) // after deleting a list, refetch all books
-    .catch(ui.deletefailure)
+  api.deleteBook(id)
+    .then(() => onShowAll(event)) // after deleting a book, refetch all books
+    .catch(ui.failure)
 }
 
 const addHandlers = () => {
