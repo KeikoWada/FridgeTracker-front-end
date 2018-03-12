@@ -2,6 +2,7 @@
 const store = require('../store')
 // const listEvents = require('./events')
 const showlistsTemplate = require('../templates/list.handlebars')
+const showlistTemplate = require('../templates/partial.handlebars')
 
 const onCreateSuccess = function (data) {
   store.data = data
@@ -15,11 +16,11 @@ const onCreateSuccess = function (data) {
 const onGetOneSuccess = function (data) {
   store.expiration_date = data.expiration_date
   console.log(data.expiration_date)
-  // $('input').val('')
-  // $('#byIdmyModal').modal('hide')
-  // $('#content').attr(store.data)
-  const showlistsHtml = showlistsTemplate({ list: data.expiration_date })
-  $('#content').append(showlistsHtml)
+  $('input').val('')
+  $('#byIdmyModal').modal('hide')
+  $('#content').attr(data.expiration_date)
+  const showlistHtml = showlistTemplate({ list: data.expiration_date })
+  $('#content').append(showlistHtml)
 }
 
 const onUpdateSuccess = function (data) {
@@ -31,11 +32,11 @@ const onUpdateSuccess = function (data) {
   // $('#content').attr('data')
 }
 
-const onUpdateFailure = function (data) {
-  store.data = data
-  const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
+const onUpdateFailure = function () {
+  // store.data = data
+  // const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
   $('input').val('')
-  $('#content').append(showlistsHtml)
+  // $('#content').append(showlistsHtml)
   $('#updatemyModal').modal('hide')
   $('#failureModal').modal('show')
 }
