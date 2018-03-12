@@ -37,8 +37,8 @@ const changePasswordSuccess = function () {
 
 const changePasswordFailure = function () {
   $('input').val('')
-  $('.modal-header').text('Old password is invalid, please try again')
-  $('.modal-header').css('color', 'red')
+  $('#changemyModal').modal('hide')
+  $('#failureModal').modal('show')
 }
 
 const signOutSuccess = function () {

@@ -254,7 +254,7 @@
 
 <!-- Button trigger modal -->
 <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#byIdmyModal">
-  Update List
+  Find the list by ID
 </button>
 
 <!-- see by ID Modal -->
@@ -267,15 +267,15 @@
       </div>
       <div class="modal-body">
         <!-- content within a model of see by ID list -->
-        <form id="update">
+        <form id="find_by_id">
           <div class="form-group">
-            <label for="list_id">List ID</label>
-            <input type="integer" class="form-control" id="list_id" name="list[id]" placeholder="ID">
+            <label for="One_id">List ID</label>
+            <input type="integer" class="form-control" id="One_id" name="list[id]" placeholder="ID">
           </div>
         <!-- content within a model of create list end -->
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-default">submit</button>
+          <button type="submit" class="btn btn-default" id="find_id">submit</button>
       </div>
     </div><!-- /.modal-content -->
     </form>

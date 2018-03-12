@@ -15,7 +15,7 @@ const onCreateSuccess = function (data) {
 const onGetOneSuccess = function (data) {
   store.data = data
   $('input').val('')
-  $('#updatemyModal').modal('hide')
+  $('#byIdmyModal').modal('hide')
 }
 
 const onUpdateSuccess = function (data) {
