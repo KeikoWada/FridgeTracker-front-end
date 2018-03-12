@@ -16,9 +16,10 @@ const onCreateSuccess = function (data) {
 const onGetOneSuccess = function (data) {
   store.expiration_date = data.expiration_date
   console.log(data.expiration_date)
+
   $('input').val('')
   $('#byIdmyModal').modal('hide')
-  $('#content').attr(data.expiration_date)
+
   const showlistHtml = showlistTemplate({ list: data.expiration_date })
   $('#content').append(showlistHtml)
 }

@@ -54,7 +54,7 @@ const onShowbyId = function (event) {
   // console.log(data)
   api.getList(data)
     // .then(() => console.log(data))
-    // .then($('.content').empty())
+    .then($('.content').empty())
     .then(ui.onGetOneSuccess)
     .catch(ui.onGetListFailure)
 }

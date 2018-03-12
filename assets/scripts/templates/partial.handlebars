@@ -1,14 +1,13 @@
 
 <ul>
-{{ list as |expiration_date|}}
 
   <h1>{{expiration_date.date}}</h1>
   <div class="body">
     <ul class="list-unstyled">
-    <li class="list-group-date" data-id="{{expiration_date.id}}">Expiration Date: {{expiration_date.date}} </li>
-    <li class="list-group-item"> ID : {{expiration_date.id}} </li>
-    <li class="list-group-item"> Item : {{expiration_date.item_name}} </li>
-    <li class="list-group-item">  Category: {{expiration_date.category}} </li>
+      <li class="list-group-date" data-id="{{list.id}}">Expiration Date: {{expiration_date.date}} </li>
+      <li class="list-group-item"> ID : {{list.id}} </li>
+      <li class="list-group-item"> Item : {{list.item_name}} </li>
+      <li class="list-group-item">  Category: {{list.category}} </li>
 </div>
 
 </ul>

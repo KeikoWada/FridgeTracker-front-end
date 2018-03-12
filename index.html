@@ -1,126 +1,131 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Fridge Tracker</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Fridge Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <div id="firstPage">
-        <h1>Fridge Tracker</h1>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-        <form id="sign-up" class="auth">
-          <p id='message'></p>
-        <fieldset>
-            <legend>Sign up!</legend>
-            <input type="text" name="credentials[email]" placeholder="Email">
-            <input type="password" name="credentials[password]" placeholder="Password">
-            <input type="password" name="credentials[password_confirmation]" placeholder="Confirmation Password">
-            <button type="submit" value="Sign up!">Sign up!</button>
-        </fieldset>
-        </form>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-        <form id="sign-in" class="auth">
-        <fieldset>
-            <legend>Sign In!</legend>
-            <input name="credentials[email]" type="text" placeholder="Email">
-            <input name="credentials[password]" type="password" placeholder="Password">
-            <button id="in-button" type="submit" value="Sign in">Sign in!</button>
-        </fieldset>
-        </form>
-      </div>
+<body class="container-fluid">
+  <div id="firstPage">
+    <h1>Fridge Tracker</h1>
 
-      <!-- list page -->
-      <div id="list">
-        <h1>Fridge Tracker</h1>
+    <form id="sign-up" class="auth">
+      <p id='message'></p>
+      <fieldset>
+        <legend>Sign up!</legend>
+        <input type="text" name="credentials[email]" placeholder="Email">
+        <input type="password" name="credentials[password]" placeholder="Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirmation Password">
+        <button type="submit" value="Sign up!">Sign up!</button>
+      </fieldset>
+    </form>
 
-<!-- horizen buttons -->
+    <form id="sign-in" class="auth">
+      <fieldset>
+        <legend>Sign In!</legend>
+        <input name="credentials[email]" type="text" placeholder="Email">
+        <input name="credentials[password]" type="password" placeholder="Password">
+        <button id="in-button" type="submit" value="Sign in">Sign in!</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <!-- list page -->
+  <div id="list">
+    <h1>Fridge Tracker</h1>
+
+    <!-- horizen buttons -->
     <div class="btn-group" data-toggle="buttons">
-  <!-- <label class="btn btn-primary active"> -->
-    <button class="btn btn-primary btn-lg" id="change" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#changemyModal">
+      <!-- <label class="btn btn-primary active"> -->
+      <button class="btn btn-primary btn-lg" id="change" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#changemyModal">
       Change Password
     </button>
-    <button class="btn btn-primary btn-lg" id="signout" data-target="#changemyModal">
+      <button class="btn btn-primary btn-lg" id="signout" data-target="#changemyModal">
       Sign Out
     </button>
-    <!-- <button type="submit" id="signout">sign Out</button> -->
-    <button type="submit" class="btn btn-primary btn-lg" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#createmyModal">
+      <!-- <button type="submit" id="signout">sign Out</button> -->
+      <button type="submit" class="btn btn-primary btn-lg" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#createmyModal">
       Create List
     </button>
-    <button type="submit" class="btn btn-primary btn-lg" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#updatemyModal">
+      <button type="submit" class="btn btn-primary btn-lg" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#updatemyModal">
       Update List
     </button>
-    <button type="submit" class="btn btn-primary btn-lg" id="showAll" data-backdrop="static" data-keyboard="false" data-toggle="modal">
+      <button type="submit" class="btn btn-primary btn-lg" id="showAll" data-backdrop="static" data-keyboard="false" data-toggle="modal">
       See All List
     </button>
-    <!-- <button type="submit" id="showAll">See All List</button> -->
-    <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#byIdmyModal">
+      <!-- <button type="submit" id="showAll">See All List</button> -->
+      <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#byIdmyModal">
       Find the list by ID
     </button>
 
 
 
-</div>
-<!-- horizen buttons end -->
+    </div>
+    <!-- horizen buttons end -->
 
 
-<!-- change password button -->
-        <!-- <button class="btn btn-primary btn-lg" id="change" data-toggle="modal" data-target="#changemyModal">
+    <!-- change password button -->
+    <!-- <button class="btn btn-primary btn-lg" id="change" data-toggle="modal" data-target="#changemyModal">
           Change Password
         </button> -->
 
-        <div class="modal fade" id="changemyModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="gridSystemModalLabel">Change Password</h4>
-            </div>
-            <div class="modal-body">
-              <form class="form" id="changeModal">
-            <div class="form-group">
+    <div class="modal fade" id="changemyModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">Change Password</h4>
+          </div>
+          <div class="modal-body">
+            <form class="form" id="changeModal">
+              <div class="form-group">
                 <label for="exampleInputPassword3">Old Password</label>
                 <input type="password" class="form-control" id="oldpw" name="passwords[old]" placeholder="Old Password" required>
-            </div>
-            <div class="form-group">
+              </div>
+              <div class="form-group">
                 <label for="exampleInputPassword3">New Password</label>
                 <input type="password" class="form-control" id="newpw" name="passwords[new]" placeholder="New Password" required>
-            </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-default" id="saveb">Save changes</button>
-
               </div>
-            </div><!-- /.modal-content -->
-          </form>
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-      <!-- </div><!-- /.modal -->
-<!-- end change password button -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-default" id="saveb">Save changes</button>
 
-<!-- password success Modal -->
-<div class="modal fade" id="pwsuccessmyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        changed password successfully
+          </div>
+        </div>
+        <!-- /.modal-content -->
+        </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
+    <!-- </div><!-- /.modal -->
+    <!-- end change password button -->
+
+    <!-- password success Modal -->
+    <div class="modal fade" id="pwsuccessmyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            changed password successfully
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- end password success modal -->
+    <!-- end password success modal -->
 
-  <!-- sign-out -->
+    <!-- sign-out -->
     <!-- <button type="submit" id="signout">sign Out</button> -->
 
     <!-- create list -->
@@ -152,16 +157,19 @@
                 <label for="category">Category</label>
                 <input type="text" class="form-control" id="category" name="expiration_date[category]" placeholder="Category" required>
               </div>
-            <!-- content within a model of create list end -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
-              <button type="submit" class="btn btn-default" id="create_button">Create list</button>
+              <!-- content within a model of create list end -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-default" id="create_button">Create list</button>
+              </div>
           </div>
         </div>
-        </div><!-- /.modal-content -->
+        <!-- /.modal-content -->
         </form>
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
     <!-- end create list modal -->
 
     <!-- create a list success Modal -->
@@ -179,148 +187,154 @@
     </div>
     <!-- create a list success modal -->
 
-<!-- update list -->
-<!-- Button trigger modal -->
-<!-- <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updatemyModal">
+    <!-- update list -->
+    <!-- Button trigger modal -->
+    <!-- <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updatemyModal">
   Update List
 </button> -->
 
-<!-- Modal -->
-<div class="modal fade" id="updatemyModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridSystemModalLabel">Update a List</h4>
-      </div>
-      <div class="modal-body">
-        <!-- content within a model of create list -->
-        <form id="update">
-          <div class="form-group">
-            <label for="list_id">List ID</label>
-            <input type="number" class="form-control" id="list_id" name="list[id]" placeholder="ID" required>
+    <!-- Modal -->
+    <div class="modal fade" id="updatemyModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">Update a List</h4>
           </div>
-          <div class="form-group">
-            <label for="expiration date">Expiration Date</label>
-            <input type="date" class="form-control" id="expiration" name="expiration_date[date]" placeholder="Expiration Date" required>
+          <div class="modal-body">
+            <!-- content within a model of create list -->
+            <form id="update">
+              <div class="form-group">
+                <label for="list_id">List ID</label>
+                <input type="number" class="form-control" id="list_id" name="list[id]" placeholder="ID" required>
+              </div>
+              <div class="form-group">
+                <label for="expiration date">Expiration Date</label>
+                <input type="date" class="form-control" id="expiration" name="expiration_date[date]" placeholder="Expiration Date" required>
+              </div>
+              <div class="form-group">
+                <label for="item">Item</label>
+                <input type="text" class="form-control" id="item_name" name="expiration_date[item_name]" placeholder="Item" required>
+              </div>
+              <div class="form-group">
+                <label for="category">Category</label>
+                <input type="text" class="form-control" id="category_name" name="expiration_date[category]" placeholder="Category" required>
+                <!-- content within a model of create list end -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                  <button type="submit" class="btn btn-default">Update list</button>
+                </div>
+              </div>
+              <!-- /.modal-content -->
+            </form>
           </div>
-          <div class="form-group">
-            <label for="item">Item</label>
-            <input type="text" class="form-control" id="item_name" name="expiration_date[item_name]" placeholder="Item" required>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+      </div>
+    </div>
+    <!-- end update list modal -->
+
+    <!-- update successfully Modal -->
+    <div class="modal fade" id="updatesuccessModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            Update a list successfully
           </div>
-          <div class="form-group">
-            <label for="category">Category</label>
-            <input type="text" class="form-control" id="category_name" name="expiration_date[category]" placeholder="Category" required>
-        <!-- content within a model of create list end -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-default">Update list</button>
-      </div>
-    </div><!-- /.modal-content -->
-    </form>
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-</div>
-</div>
-<!-- end update list modal -->
-
-<!-- update successfully Modal -->
-<div class="modal fade" id="updatesuccessModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        Update a list successfully
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- end update successfully modal -->
+    <!-- end update successfully modal -->
 
-<!-- delete Modal -->
-<div class="modal fade" id="deletemyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        Delete a list successfully
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- delete modal -->
-
-<!-- sign out Modal -->
-<div class="modal fade" id="signoutmyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        sign out successfully
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <!-- delete Modal -->
+    <div class="modal fade" id="deletemyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            Delete a list successfully
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- signout modal -->
+    <!-- delete modal -->
 
-<!-- failure Modal -->
-<div class="modal fade" id="failureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        ooops! seems something is wrong. please check your input
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <!-- sign out Modal -->
+    <div class="modal fade" id="signoutmyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            sign out successfully
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- end update successfully modal -->
+    <!-- signout modal -->
+
+    <!-- failure Modal -->
+    <div class="modal fade" id="failureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            ooops! seems something is wrong. please check your input
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end update successfully modal -->
 
 
-<!-- <button type="submit" id="showAll">See All List</button> -->
+    <!-- <button type="submit" id="showAll">See All List</button> -->
 
 
 
-<!-- Button trigger modal -->
-<!-- <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#byIdmyModal">
+    <!-- Button trigger modal -->
+    <!-- <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#byIdmyModal">
   Find the list by ID
 </button> -->
 
-<!-- see by ID Modal -->
-<div class="modal fade" id="byIdmyModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridSystemModalLabel">Which List would you like to see?</h4>
-      </div>
-      <div class="modal-body">
-        <!-- content within a model of see by ID list -->
-        <form id="find_by_id">
-          <div class="form-group">
-            <label for="One_id">List ID</label>
-            <input type="number" class="form-control" id="One_id" name="list[id]" placeholder="ID" required>
+    <!-- see by ID Modal -->
+    <div class="modal fade" id="byIdmyModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="gridSystemModalLabel">Which List would you like to see?</h4>
           </div>
-        <!-- content within a model of create list end -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
-          <button type="submit" class="btn btn-default" id="find_id">submit</button>
+          <div class="modal-body">
+            <!-- content within a model of see by ID list -->
+            <form id="find_by_id">
+              <div class="form-group">
+                <label for="One_id">List ID</label>
+                <input type="number" class="form-control" id="One_id" name="list[id]" placeholder="ID" required>
+              </div>
+              <!-- content within a model of create list end -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-default" id="find_id">submit</button>
+              </div>
+          </div>
+          <!-- /.modal-content -->
+          </form>
+        </div>
+        <!-- /.modal-dialog -->
       </div>
-    </div><!-- /.modal-content -->
-    </form>
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-</div>
-</div>
-<!-- end see by ID list modal -->
+      <!-- /.modal -->
+    </div>
+  </div>
+  <!-- end see by ID list modal -->
 
 
 
@@ -328,14 +342,15 @@
 
 
 
-<!-- <p>
+  <!-- <p>
   <button type="button" id="showAll" class="btn btn-primary">See All List</button>
   <button type="button" id="showAll" class="btn btn-default">All List</button>
 </p> -->
 
-<p id="content" class="content">
-</p>
+  <p id="content" class="content">
+  </p>
 
-<!-- </div> -->
-    </body>
+  <!-- </div> -->
+</body>
+
 </html>
