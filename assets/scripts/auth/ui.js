@@ -5,18 +5,21 @@ const signUpSuccess = function () {
   $('input').val('')
   $('#message').text('Signed up successfully')
   $('#message').css('color', 'green')
+  $('#message').css('background-color', 'gray')
 }
 
 const signUpFailure = function () {
   $('input').val('')
   $('#message').text('Error on signing up')
   $('#message').css('color', 'red')
+  $('#message').css('background-color', 'gray')
 }
 
 const signInSuccess = function (data) {
   $('input').val('')
   $('#message').text('Signed in successfully')
-  $('#message').css('background-color', 'green')
+  $('#message').css('background-color', 'gray')
+  $('#message').css('color', 'green')
   $('#list').toggle('slow')
   $('#firstPage').toggle('slow')
   // $('#message').dequeue()
@@ -26,6 +29,7 @@ const signInSuccess = function (data) {
 const signInFailure = function () {
   $('input').val('')
   $('#message').text('Error in signing in')
+  $('#message').css('backgorund-color', 'gray')
   $('#message').css('color', 'red')
 }
 
@@ -44,12 +48,12 @@ const changePasswordFailure = function () {
 const signOutSuccess = function () {
   $('input').val('')
   $('#message').text('Signed out successfully')
-  $('#message').css('color', 'green')
+  $('#message').css('background-color', 'gray')
   $('#list').toggle('slow')
   $('#firstPage').toggle('slow')
   $('.content').empty()
   $('#message').delay(3000).queue(function () {
-    $('#message').text('Welcome! Are you ready to play game?', 'green')
+    $('#message').text('Welcome! Do you know which food you need to eat today?', 'green')
   })
 }
 

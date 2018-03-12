@@ -39,20 +39,41 @@
       <!-- list page -->
       <div id="list">
         <h1>Fridge Tracker</h1>
+
 <!-- horizen buttons -->
-<ul>
-  <li><a href="#change">Change Password</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-</ul>
+    <div class="btn-group" data-toggle="buttons">
+  <!-- <label class="btn btn-primary active"> -->
+    <button class="btn btn-primary btn-lg" id="change" data-toggle="modal" data-target="#changemyModal">
+      Change Password
+    </button>
+    <button class="btn btn-primary btn-lg" id="signout" data-target="#changemyModal">
+      Sign Out
+    </button>
+    <!-- <button type="submit" id="signout">sign Out</button> -->
+    <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createmyModal">
+      Create List
+    </button>
+    <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updatemyModal">
+      Update List
+    </button>
+    <button type="submit" class="btn btn-primary btn-lg" id="showAll" data-toggle="modal">
+      See All List
+    </button>
+    <!-- <button type="submit" id="showAll">See All List</button> -->
+    <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#byIdmyModal">
+      Find the list by ID
+    </button>
+
+
+
+</div>
 <!-- horizen buttons end -->
 
 
 <!-- change password button -->
-        <button class="btn btn-primary btn-lg" id="change" data-toggle="modal" data-target="#changemyModal">
+        <!-- <button class="btn btn-primary btn-lg" id="change" data-toggle="modal" data-target="#changemyModal">
           Change Password
-        </button>
+        </button> -->
 
         <div class="modal fade" id="changemyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -99,13 +120,13 @@
 <!-- end password success modal -->
 
   <!-- sign-out -->
-    <button type="submit" id="signout">sign Out</button>
+    <!-- <button type="submit" id="signout">sign Out</button> -->
 
     <!-- create list -->
     <!-- Button trigger modal -->
-    <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createmyModal">
+    <!-- <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#createmyModal">
       Create List
-    </button>
+    </button> -->
 
     <!-- Modal -->
     <div class="modal fade" id="createmyModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
@@ -159,9 +180,9 @@
 
 <!-- update list -->
 <!-- Button trigger modal -->
-<button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updatemyModal">
+<!-- <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#updatemyModal">
   Update List
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="updatemyModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
@@ -232,6 +253,21 @@
 </div>
 <!-- delete modal -->
 
+<!-- sign out Modal -->
+<div class="modal fade" id="signoutmyModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        sign out successfully
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- signout modal -->
+
 <!-- failure Modal -->
 <div class="modal fade" id="failureModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -248,14 +284,14 @@
 <!-- end update successfully modal -->
 
 
-<button type="submit" id="showAll">See All List</button>
-<button type="submit" id="get">See one list</button>
+<!-- <button type="submit" id="showAll">See All List</button> -->
+
 
 
 <!-- Button trigger modal -->
-<button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#byIdmyModal">
+<!-- <button type="submit" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#byIdmyModal">
   Find the list by ID
-</button>
+</button> -->
 
 <!-- see by ID Modal -->
 <div class="modal fade" id="byIdmyModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
@@ -299,6 +335,6 @@
 <p id="content" class="content">
 </p>
 
-</div>
+<!-- </div> -->
     </body>
 </html>
