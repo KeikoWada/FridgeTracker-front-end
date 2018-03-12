@@ -50,11 +50,11 @@ const onShowAll = function (event) {
 const onShowbyId = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  store.data = data
-
+  // store.data = data
+  // console.log(data)
   api.getList(data)
-    .then(() => console.log(data))
-    .then($('.content').empty())
+    // .then(() => console.log(data))
+    // .then($('.content').empty())
     .then(ui.onGetOneSuccess)
     .catch(ui.onGetListFailure)
 }
@@ -72,13 +72,17 @@ const onDeleteList = (event) => {
     .catch(ui.failure)
 }
 
+const cancel = function () {
+  $('input').val('')
+}
+
 const addHandlers = () => {
   $('#create').on('submit', onCreateList)
-  // $('#get').on('click', onGetOne)
   $('#showAll').on('click', onShowAll)
   $('#update').on('submit', onUpdate)
   $('body').on('click', '#remove', onDeleteList)
   $('#find_by_id').on('submit', onShowbyId)
+  $('.cancel').on('click', cancel)
 }
 
 module.exports = {

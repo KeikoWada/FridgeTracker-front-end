@@ -66,7 +66,8 @@ const showAll = function () {
 }
 
 const getList = function (data) {
-  console.log(data.list.id)
+  // console.log(data.expiration_date.id)
+  // console.log(data.list.id)
   return $.ajax({
     url: config.apiOrigin + '/expiration_dates/' + data.list.id,
     method: 'GET',

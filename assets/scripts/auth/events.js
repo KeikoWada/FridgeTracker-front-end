@@ -24,6 +24,10 @@ const onSignIn = function (event) {
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
+
+    // api.showAll(event)
+    //   .then(ui.onShowAllSuccess)
+    //   .catch(ui.onShowAllFailure))
 }
 
 const onChangePassword = function (event) {
