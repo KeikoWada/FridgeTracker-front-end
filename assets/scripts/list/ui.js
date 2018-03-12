@@ -14,8 +14,10 @@ const onCreateSuccess = function (data) {
 
 const onGetOneSuccess = function (data) {
   store.data = data
+  console.log('ui')
   $('input').val('')
   $('#byIdmyModal').modal('hide')
+  $('#content').attr(data.expiration_dates)
 }
 
 const onUpdateSuccess = function (data) {
@@ -24,7 +26,7 @@ const onUpdateSuccess = function (data) {
   $('input').val('')
   $('#content').append(showlistsHtml)
   $('#updatemyModal').modal('hide')
-  $('#updatesuccessModal').modal('show')
+  $('#content').attr('data')
 }
 
 const onUpdateFailure = function (data) {

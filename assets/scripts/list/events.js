@@ -22,17 +22,6 @@ const onCreateList = function (event) {
     .catch(ui.onCreatefailure)
 }
 
-const onGetOne = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  store.data = data
-
-  api.getList(data)
-    .then($('.content').empty())
-    .then(ui.onGetOneSuccess)
-    .catch(ui.onGetOneFailure)
-}
-
 const onUpdate = function (event) {
   const data = getFormFields(this)
   console.log(this)
@@ -62,9 +51,10 @@ const onShowbyId = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   store.data = data
-  console.log(data)
 
   api.getList(data)
+    .then(() => console.log(data))
+    .then($('.content').empty())
     .then(ui.onGetOneSuccess)
     .catch(ui.onGetListFailure)
 }
@@ -84,7 +74,7 @@ const onDeleteList = (event) => {
 
 const addHandlers = () => {
   $('#create').on('submit', onCreateList)
-  $('#get').on('click', onGetOne)
+  // $('#get').on('click', onGetOne)
   $('#showAll').on('click', onShowAll)
   $('#update').on('submit', onUpdate)
   $('body').on('click', '#remove', onDeleteList)
