@@ -79,6 +79,19 @@ const getList = function (data) {
   })
 }
 
+const load = function (id) {
+  // console.log(data.expiration_date.id)
+  // console.log(data.list.id)
+  return $.ajax({
+    url: config.apiOrigin + '/expiration_dates/' + id,
+    method: 'GET',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deleteList = function (id) {
   console.log(id)
   return $.ajax({
@@ -93,7 +106,7 @@ const deleteList = function (id) {
 
 module.exports = {
   create,
-  // getOne,
+  load,
   updateList,
   showAll,
   getList,

@@ -33,7 +33,7 @@
       <button class="list-delete" data-id={{expiration_date.id}}>
         Remove
       </button>
-      <button type="submit" data-id={{expiration_date.id}} class="list-update" class="btn btn-primary btn-lg" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#thisupdatemyModal">
+      <button type="submit" data-id={{expiration_date.id}} class="list-update" class="btn btn-primary btn-lg" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#thisupdatemyModal" >
       Update List
     </button>
     {{/if}}
@@ -58,19 +58,19 @@
         <form id="updateHtml">
           <div class="form-group">
             <label for="list_id">List ID</label>
-            <input type="number" class="form-control" id="list_id" name="list[id]" placeholder="ID" required>
+            <input type="number" class="form-control oneId" id="" name="list[id]" placeholder="ID" disabled>
           </div>
           <div class="form-group">
             <label for="expiration date">Expiration Date</label>
-            <input type="date" class="form-control" id="expiration" name=expiration_date[date] placeholder="YYYY-MM-DD" required>
+            <input type="date" class="form-control oneDate" id="expiration" name=expiration_date[date] placeholder="YYYY-MM-DD" required>
           </div>
           <div class="form-group">
             <label for="item">Item</label>
-            <input type="text" class="form-control" id="item_name" name="expiration_date[category]" placeholder="Item Name" required>
+            <input type="text" class="form-control oneItem" id="item_name" name="expiration_date[category]" placeholder="Item Name" required>
           </div>
           <div class="form-group">
             <label for="category">Category</label>
-            <input type="text" class="form-control" id="category_name" name="expiration_date[category]" placeholder="Category" required>
+            <input type="text" class="form-control oneCategory" id="category_name" name="expiration_date[category]" placeholder="Category" required>
             <!-- content within a model of create list end -->
             <div class="modal-footer">
               <button type="button" class="btn btn-default cancel" data-dismiss="modal">Cancel</button>

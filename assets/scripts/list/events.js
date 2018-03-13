@@ -74,6 +74,18 @@ const onShowbyId = function (event) {
     .catch(ui.onGetListFailure)
 }
 
+const onOneLoad = (event) => {
+  event.preventDefault()
+
+  // grab the `data-id` attribute
+  const id = event.target.dataset.id
+  api.load(id)
+    .then(ui.getOne)
+    .then(() => api.updateList)
+    .then($('.content').empty())
+    .then(ui.onGetOneSuccess)
+}
+
 const onDeleteList = (event) => {
   event.preventDefault()
 
@@ -99,7 +111,8 @@ const addHandlers = () => {
   $('#find_by_id').on('submit', onShowbyId)
   $('.cancel').on('click', cancel)
   $('#content').on('click', '.list-delete', onDeleteList)
-  // $('#content').on('click', '.toupdate', onUpdate)
+
+  $('#content').on('click', '.list-update', onOneLoad)
   $('.close').on('click', cancel)
 }
 

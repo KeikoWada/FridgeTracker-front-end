@@ -30,6 +30,19 @@ const onGetListFailure = function () {
   $('#failureModal').modal('show')
 }
 
+const getOne = (data) => {
+  store.data = data
+  console.log(data)
+  console.log('this is data')
+  // const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
+  // $('#content').append(showlistsHtml)
+  console.log(data.expiration_date.id)
+  $('.oneId').val(data.expiration_date.id)
+  $('.oneDate').val(data.expiration_date.date)
+  $('.oneItem').val(data.expiration_date.item_name)
+  $('.oneCategory').val(data.expiration_date.category)
+}
+
 const onUpdateSuccess = function (data) {
   store.data = data
   const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
@@ -79,5 +92,6 @@ module.exports = {
   onUpdateFailure,
   onShowAllSuccess,
   removeList,
-  onGetListFailure
+  onGetListFailure,
+  getOne
 }
