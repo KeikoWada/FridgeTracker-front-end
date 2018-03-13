@@ -1,13 +1,16 @@
 
 <ul>
 
-  <h1>{{expiration_date.date}}</h1>
   <div class="body">
     <ul class="list-unstyled">
-      <li class="list-group-date" data-id="{{list.id}}">Expiration Date: {{expiration_date.date}} </li>
+      <li class="list-group-date" data-id="{{list.id}}">Expiration Date: {{list.date}} </li>
       <li class="list-group-item"> ID : {{list.id}} </li>
       <li class="list-group-item"> Item : {{list.item_name}} </li>
       <li class="list-group-item">  Category: {{list.category}} </li>
+      <!-- <button id="edit" class="btn btn-default">Edit item</button> -->
+      <!-- <button class="list-delete" data-id={{expiration_date.id}}>
+        Remove
+      </button> -->
 </div>
 
 </ul>

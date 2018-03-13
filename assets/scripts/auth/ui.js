@@ -22,7 +22,7 @@ const signInSuccess = function (data) {
   $('#message').css('color', 'green')
   $('#list').toggle('slow')
   $('#firstPage').toggle('slow')
-  // $('#message').dequeue()
+  $('#message').dequeue()
   store.user = data.user
 }
 

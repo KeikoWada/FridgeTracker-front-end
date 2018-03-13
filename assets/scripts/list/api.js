@@ -53,6 +53,7 @@ const updateList = function (data) {
     //     'category': category
   })
 }
+// data.list.id,
 
 const showAll = function () {
   return $.ajax({

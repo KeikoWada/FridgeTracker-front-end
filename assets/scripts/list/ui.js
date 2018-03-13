@@ -24,6 +24,12 @@ const onGetOneSuccess = function (data) {
   $('#content').append(showlistHtml)
 }
 
+const onGetListFailure = function () {
+  $('input').val('')
+  $('#byIdmyModal').modal('hide')
+  $('#failureModal').modal('show')
+}
+
 const onUpdateSuccess = function (data) {
   store.data = data
   const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
@@ -72,7 +78,6 @@ module.exports = {
   onUpdateSuccess,
   onUpdateFailure,
   onShowAllSuccess,
-  removeList
-  // onTrackFailure,
-  // onCreateNewSuccess
+  removeList,
+  onGetListFailure
 }
