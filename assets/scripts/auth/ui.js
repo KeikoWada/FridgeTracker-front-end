@@ -17,9 +17,9 @@ const signUpFailure = function () {
 
 const signInSuccess = function (data) {
   $('input').val('')
-  $('#message').text('Signed in successfully')
-  $('#message').css('background-color', 'gray')
-  $('#message').css('color', 'green')
+  $('#messageTwo').text('Signed in successfully')
+  $('#messageTwo').css('background-color', 'gray')
+  $('#messageTwo').css('color', 'green')
   $('#list').toggle('slow')
   $('#firstPage').toggle('slow')
   $('#message').dequeue()
