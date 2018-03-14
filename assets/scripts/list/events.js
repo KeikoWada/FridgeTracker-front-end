@@ -76,7 +76,7 @@ const onDeleteList = (event) => {
   api.deleteList(id)
     .then(() => api.showAll(event))
     .then($('.content').empty())
-    .then(ui.removeList) // after deleting a book, refetch all books
+    .then(ui.removeList) // after deleting a list, refetch all lists
     .catch(ui.failure)
 }
 
@@ -88,7 +88,6 @@ const addHandlers = () => {
   $('#create').on('submit', onCreateList)
   $('#showAll').on('click', onShowAll)
   $('#update').on('submit', onUpdate)
-  // $('body').on('click', '#remove', onDeleteList)
   $('#find_by_id').on('submit', onShowbyId)
   $('.cancel').on('click', cancel)
   $('#content').on('click', '.list-delete', onDeleteList)

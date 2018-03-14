@@ -40,12 +40,14 @@ const changePasswordSuccess = function () {
   $('input').val('')
   $('#changemyModal').modal('hide')
   $('#pwsuccessmyModal').modal('show')
+  $('#messageTwo').dequeue()
 }
 
 const changePasswordFailure = function () {
   $('input').val('')
   $('#changemyModal').modal('hide')
   $('#failureModal').modal('show')
+  $('#messageTwo').dequeue()
 }
 
 const signOutSuccess = function () {

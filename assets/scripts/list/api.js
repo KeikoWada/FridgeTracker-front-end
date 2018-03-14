@@ -19,7 +19,7 @@ const create = function (data) {
 }
 
 // const getOne = function (data) {
-  // console.log('api')
+// console.log('api')
 //   return $.ajax({
 //     url: config.apiOrigin + '/expiration_dates' + store.id,
 //     method: 'POST',

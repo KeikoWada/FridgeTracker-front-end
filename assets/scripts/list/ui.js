@@ -11,6 +11,7 @@ const onCreateSuccess = function (data) {
   $('input').val('')
   $('#createsuccessmyModal').modal('show')
   $('#createmyModal').modal('hide')
+  $('#messageTwo').dequeue()
 }
 
 const onGetOneSuccess = function (data) {
@@ -22,12 +23,14 @@ const onGetOneSuccess = function (data) {
 
   const showlistHtml = showlistTemplate({ list: data.expiration_date })
   $('#content').append(showlistHtml)
+  $('#messageTwo').dequeue()
 }
 
 const onGetListFailure = function () {
   $('input').val('')
   $('#byIdmyModal').modal('hide')
   $('#failureModal').modal('show')
+  $('#messageTwo').dequeue()
 }
 
 const getOne = (data) => {
@@ -41,6 +44,7 @@ const getOne = (data) => {
   $('.oneDate').val(data.expiration_date.date)
   $('.oneItem').val(data.expiration_date.item_name)
   $('.oneCategory').val(data.expiration_date.category)
+  $('#messageTwo').dequeue()
 }
 
 const onUpdateSuccess = function (data) {
@@ -48,12 +52,16 @@ const onUpdateSuccess = function (data) {
   const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
   $('input').val('')
   $('#content').append(showlistsHtml)
-  $('#createsuccessmyModal').modal('show')
+  $('#updatesuccessModal').modal('show')
   $('#updatemyModal').modal('hide')
   $('#thisupdatemyModal').modal('hide')
   $('#your-modal-id').modal('hide')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
+  $('#messageTwo').text('updated successfully')
+  $('#messageTwo').delay(3000).queue(function () {
+    $('#messageTwo').text('Welcome', 'green')
+  })
 }
 
 const onUpdateFailure = function () {
@@ -63,6 +71,7 @@ const onUpdateFailure = function () {
   // $('#content').append(showlistsHtml)
   $('#updatemyModal').modal('hide')
   $('#failureModal').modal('show')
+  $('#messageTwo').dequeue()
   // $('#your-modal-id').modal('hide')
   // $('body').removeClass('modal-open')
   // $('.modal-backdrop').remove()
@@ -74,6 +83,7 @@ const onShowAllSuccess = function (data) {
   $('#content').append(showlistsHtml)
   // console.log(data.expiration_dates)
   $('input').val('')
+  $('#messageTwo').dequeue()
   // $('#createmyModal').modal('hide')
   // $('#createsuccessmyModal').modal('show')
   // $('#messageTwo').css('background-color', 'gray')
@@ -90,6 +100,7 @@ const removeList = (data) => {
   // console.log(data.expiration_dates)
   // $('input').val('')
   $('#deletemyModal').modal('show')
+  $('#messageTwo').dequeue()
 }
 
 module.exports = {
