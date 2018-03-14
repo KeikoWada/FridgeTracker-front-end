@@ -15,7 +15,7 @@ const onCreateSuccess = function (data) {
 
 const onGetOneSuccess = function (data) {
   store.expiration_date = data.expiration_date
-  console.log(data.expiration_date)
+  // console.log(data.expiration_date)
 
   $('input').val('')
   $('#byIdmyModal').modal('hide')
@@ -32,11 +32,11 @@ const onGetListFailure = function () {
 
 const getOne = (data) => {
   store.data = data
-  console.log(data)
-  console.log('this is data')
+  // console.log(data)
+  // console.log('this is data')
   // const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
   // $('#content').append(showlistsHtml)
-  console.log(data.expiration_date.id)
+  // console.log(data.expiration_date.id)
   $('.oneId').val(data.expiration_date.id)
   $('.oneDate').val(data.expiration_date.date)
   $('.oneItem').val(data.expiration_date.item_name)
@@ -72,7 +72,7 @@ const onShowAllSuccess = function (data) {
   store.data = data
   const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
   $('#content').append(showlistsHtml)
-  console.log(data.expiration_dates)
+  // console.log(data.expiration_dates)
   $('input').val('')
   // $('#createmyModal').modal('hide')
   // $('#createsuccessmyModal').modal('show')

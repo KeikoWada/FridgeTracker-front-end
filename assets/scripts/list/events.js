@@ -7,12 +7,12 @@ const store = require('../store')
 
 const onCreateList = function (event) {
   event.preventDefault()
-  console.log(event)
-  console.log(event.target)
+  // console.log(event)
+  // console.log(event.target)
   const data = getFormFields(event.target)
-  console.log('1')
+  // console.log('1')
   store.data = data
-  console.log(data.expiration_dates)
+  // console.log(data.expiration_dates)
 
   api.create(data)
     .then(() => api.showAll(event))
@@ -23,7 +23,7 @@ const onCreateList = function (event) {
 
 const onUpdate = function (event) {
   const data = getFormFields(this)
-  console.log(data)
+  // console.log(data)
   event.preventDefault()
   store.data = data
 

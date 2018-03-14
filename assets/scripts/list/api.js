@@ -5,8 +5,8 @@ const store = require('../store')
 // const handlebars = require('../templates/list.handlebars')
 
 const create = function (data) {
-  console.log(data)
-  console.log('api')
+  // console.log(data)
+  // console.log('api')
   return $.ajax({
     url: config.apiOrigin + '/expiration_dates',
     method: 'POST',
@@ -19,7 +19,7 @@ const create = function (data) {
 }
 
 // const getOne = function (data) {
-//   console.log('api')
+  // console.log('api')
 //   return $.ajax({
 //     url: config.apiOrigin + '/expiration_dates' + store.id,
 //     method: 'POST',
@@ -33,7 +33,7 @@ const create = function (data) {
 
 const updateList = function (data) {
   // console.log(data)
-  console.log(data.list.id)
+  // console.log(data.list.id)
   return $.ajax({
     url: config.apiOrigin + '/expiration_dates/' + data.list.id,
     method: 'PATCH',
@@ -93,7 +93,7 @@ const load = function (id) {
 }
 
 const deleteList = function (id) {
-  console.log(id)
+  // console.log(id)
   return $.ajax({
     url: config.apiOrigin + '/expiration_dates/' + id,
     method: 'DELETE',
