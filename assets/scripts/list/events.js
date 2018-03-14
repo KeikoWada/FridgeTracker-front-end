@@ -40,21 +40,6 @@ const onUpdate = function (event) {
     .catch(ui.onUpdateFailure)
 }
 
-// const onUpdate = (event) => {
-//   event.preventDefault()
-//   // const data = getFormFields(this)
-//   // store.data = data
-//   // grab the `data-id` attribute
-//   const id = event.target.dataset.id
-//   console.log(id)
-//
-//   api.updateList(id)
-//     .then(() => api.showAll(event))
-//     .then($('.content').empty())
-//     .then(ui.onUpdateSuccess) // after deleting a book, refetch all books
-//     .catch(ui.onUpdateFailure)
-// }
-
 const onShowAll = function (event) {
   api.showAll(event)
     .then($('.content').empty())
@@ -81,14 +66,10 @@ const onOneLoad = (event) => {
   const id = event.target.dataset.id
   api.load(id)
     .then(ui.getOne)
-    .then(() => api.updateList)
-    .then($('.content').empty())
-    .then(ui.onGetOneSuccess)
 }
 
 const onDeleteList = (event) => {
   event.preventDefault()
-
   // grab the `data-id` attribute
   const id = event.target.dataset.id
 
@@ -111,8 +92,8 @@ const addHandlers = () => {
   $('#find_by_id').on('submit', onShowbyId)
   $('.cancel').on('click', cancel)
   $('#content').on('click', '.list-delete', onDeleteList)
-
   $('#content').on('click', '.list-update', onOneLoad)
+  $('#content').on('submit', '#updateHtml', onUpdate)
   $('.close').on('click', cancel)
 }
 

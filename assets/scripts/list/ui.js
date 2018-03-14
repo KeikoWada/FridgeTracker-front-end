@@ -48,8 +48,12 @@ const onUpdateSuccess = function (data) {
   const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
   $('input').val('')
   $('#content').append(showlistsHtml)
+  $('#createsuccessmyModal').modal('show')
   $('#updatemyModal').modal('hide')
-  // $('#content').attr('data')
+  $('#thisupdatemyModal').modal('hide')
+  $('#your-modal-id').modal('hide')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
 }
 
 const onUpdateFailure = function () {
@@ -59,6 +63,9 @@ const onUpdateFailure = function () {
   // $('#content').append(showlistsHtml)
   $('#updatemyModal').modal('hide')
   $('#failureModal').modal('show')
+  // $('#your-modal-id').modal('hide')
+  // $('body').removeClass('modal-open')
+  // $('.modal-backdrop').remove()
 }
 
 const onShowAllSuccess = function (data) {
