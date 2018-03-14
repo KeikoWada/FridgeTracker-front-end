@@ -23,6 +23,9 @@ const signInSuccess = function (data) {
   $('#list').toggle('slow')
   $('#firstPage').toggle('slow')
   $('#message').dequeue()
+  $('#messageTwo').delay(3000).queue(function () {
+    $('#messageTwo').text('Welcome', 'green')
+  })
   store.user = data.user
 }
 
@@ -52,6 +55,7 @@ const signOutSuccess = function () {
   $('#list').toggle('slow')
   $('#firstPage').toggle('slow')
   $('.content').empty()
+  $('#messageTwo').dequeue()
   $('#message').delay(3000).queue(function () {
     $('#message').text('Welcome! Do you know which food you need to eat today?', 'green')
   })
