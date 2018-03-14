@@ -50,8 +50,7 @@ The story about development process and problem-solving strategy.
 List unsolved problems which would be fixed in future iterations.
   - make code DRY
   - styling
-  - update function from handlebars
-  - retrive the former data in modal when click the edit(update) button
+  - calliing success update modal 
 
 
 Link to wireframes
