@@ -17,16 +17,12 @@ const onCreateSuccess = function (data) {
 const onGetOneSuccess = function (data) {
   store.expiration_date = data.expiration_date
   // console.log(data.expiration_date)
-  if (data.expiration_dates.length >= 1) {
-    $('input').val('')
-    $('#byIdmyModal').modal('hide')
+  $('input').val('')
+  $('#byIdmyModal').modal('hide')
 
-    const showlistHtml = showlistTemplate({ list: data.expiration_date })
-    $('#content').append(showlistHtml)
-    $('#messageTwo').dequeue()
-  } else {
-
-  }
+  const showlistHtml = showlistTemplate({ list: data.expiration_date })
+  $('#content').append(showlistHtml)
+  $('#messageTwo').dequeue()
 }
 
 const onGetListFailure = function () {
