@@ -79,18 +79,17 @@ const onUpdateFailure = function () {
 
 const onShowAllSuccess = function (data) {
   store.data = data
-  const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
-  $('#content').append(showlistsHtml)
-  // console.log(data.expiration_dates)
-  $('input').val('')
-  $('#messageTwo').dequeue()
-  // $('#createmyModal').modal('hide')
-  // $('#createsuccessmyModal').modal('show')
-  // $('#messageTwo').css('background-color', 'gray')
-  // $('#messageTwo').delay(5000).queue(function () {
-  //   $(this).removeAttr('style')
-  //   $(this).text('')
-  // })
+
+  if (data.expiration_dates.length >= 1) {
+    const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
+    $('#content').append(showlistsHtml)
+    // console.log(data.expiration_dates)
+    $('input').val('')
+    $('#messageTwo').dequeue()
+  } else {
+    $('#noneListModal').modal('show')
+    $('#messageTwo').dequeue()
+  }
 }
 
 const removeList = (data) => {
