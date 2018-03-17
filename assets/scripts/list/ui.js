@@ -17,13 +17,16 @@ const onCreateSuccess = function (data) {
 const onGetOneSuccess = function (data) {
   store.expiration_date = data.expiration_date
   // console.log(data.expiration_date)
+  if (data.expiration_dates.length >= 1) {
+    $('input').val('')
+    $('#byIdmyModal').modal('hide')
 
-  $('input').val('')
-  $('#byIdmyModal').modal('hide')
+    const showlistHtml = showlistTemplate({ list: data.expiration_date })
+    $('#content').append(showlistHtml)
+    $('#messageTwo').dequeue()
+  } else {
 
-  const showlistHtml = showlistTemplate({ list: data.expiration_date })
-  $('#content').append(showlistHtml)
-  $('#messageTwo').dequeue()
+  }
 }
 
 const onGetListFailure = function () {
@@ -62,6 +65,7 @@ const onUpdateSuccess = function (data) {
   $('#messageTwo').delay(3000).queue(function () {
     $('#messageTwo').text('Welcome', 'green')
   })
+    .then(() => $('#messageTwo').dequeue())
 }
 
 const onUpdateFailure = function () {
@@ -79,19 +83,24 @@ const onUpdateFailure = function () {
 
 const onShowAllSuccess = function (data) {
   store.data = data
-  const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
-  $('#content').append(showlistsHtml)
-  // console.log(data.expiration_dates)
-  $('input').val('')
-  $('#messageTwo').dequeue()
-  // $('#createmyModal').modal('hide')
-  // $('#createsuccessmyModal').modal('show')
-  // $('#messageTwo').css('background-color', 'gray')
-  // $('#messageTwo').delay(5000).queue(function () {
-  //   $(this).removeAttr('style')
-  //   $(this).text('')
-  // })
+  if (data.expiration_dates.length >= 1) {
+    const showlistsHtml = showlistsTemplate({ lists: data.expiration_dates })
+    $('#content').append(showlistsHtml)
+    // console.log(data.expiration_dates)
+    $('input').val('')
+    $('#messageTwo').dequeue()
+  } else {
+    $('#noneListModal').modal('show')
+    console.log('onShowAllFailure')
+    $('#messageTwo').dequeue()
+  }
 }
+
+// const onShowAllFailure = function () {
+//   $('#showAllFailureModal').modal('show')
+//   console.log('onShowAllFailure')
+//   $('#messageTwo').dequeue()
+// }
 
 const removeList = (data) => {
   store.data = data
@@ -109,6 +118,7 @@ module.exports = {
   onUpdateSuccess,
   onUpdateFailure,
   onShowAllSuccess,
+  // onShowAllFailure,
   removeList,
   onGetListFailure,
   getOne

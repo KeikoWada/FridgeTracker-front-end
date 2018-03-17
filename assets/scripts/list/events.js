@@ -44,7 +44,7 @@ const onShowAll = function (event) {
   api.showAll(event)
     .then($('.content').empty())
     .then(ui.onShowAllSuccess)
-    .catch(ui.onShowAllFailure)
+    // .catch(ui.onShowAllFailure)
 }
 
 const onShowbyId = function (event) {
