@@ -1,4 +1,4 @@
-Links
+## Links
 
 - back-end side of repository:
   https://github.com/KeikoWada/FridgeTracker-api
@@ -8,7 +8,7 @@ Links
   https://fridgetracker-kw.herokuapp.com/
 
 
-instruction for FridgeTracker App;
+## instruction for FridgeTracker App;
   This is the App that you can track the expiration dates of each food in your fridge.
   1) create the list
     - insert the expiration date, item name, and category
@@ -20,7 +20,7 @@ instruction for FridgeTracker App;
     - you can search certain list by ID
 
 
-List technologies used.
+## List technologies used.
   -Jquery
   -javascript
   -Ajax
@@ -31,7 +31,7 @@ List technologies used.
   -handlebars
 
 
-The plan for this project
+## The plan for this project
   1) make user story
      - to see what user is expecting for brower to do
   2) make lists of each required action according to the user stories.
@@ -39,7 +39,7 @@ The plan for this project
   3) writing the code
 
 
-The story about development process and problem-solving strategy.
+## The story about development process and problem-solving strategy.
    my process was
    1) back-end side
    2) front-end side
@@ -47,16 +47,16 @@ The story about development process and problem-solving strategy.
    for example, in front-end side, if I make shell file, i checked curl request, then move on to the html, event, ajax, and ui file.
    when I had issue, I tried to think step by step and use console log a lot to see which function is working, and what is passing from which paramiter.
 
-List unsolved problems which would be fixed in future iterations.
+## List unsolved problems which would be fixed in future iterations.
   - make code DRY
   - styling
-  - calliing success update modal 
+  - calliing success update modal
 
 
-Link to wireframes
+## Link to wireframes
   https://i.imgur.com/vH1T6lx.jpg
 
-user story
+## user story
   if I am a user
   - I want to be able to save my email address and password
   - I want to be able to sign-in with the email and password that I registered before
