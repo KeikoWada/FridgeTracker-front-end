@@ -10,7 +10,6 @@ const onCreateList = function (event) {
   // console.log(event)
   // console.log(event.target)
   const data = getFormFields(event.target)
-  // console.log('1')
   store.data = data
   // console.log(data.expiration_dates)
 
@@ -50,10 +49,7 @@ const onShowAll = function (event) {
 const onShowbyId = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // store.data = data
-  // console.log(data)
   api.getList(data)
-    // .then(() => console.log(data))
     .then($('.content').empty())
     .then(ui.onGetOneSuccess)
     .catch(ui.onGetListFailure)
