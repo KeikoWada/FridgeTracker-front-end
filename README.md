@@ -8,7 +8,7 @@
   https://fridgetracker-kw.herokuapp.com/
 
 
-## instruction for FridgeTracker App;
+## Instruction for FridgeTracker App;
   This is the App that you can track the expiration dates of each food in your fridge.
   1) create the list
     - insert the expiration date, item name, and category
@@ -33,38 +33,33 @@
 
 ## The plan for this project
   1) make user story
-     - to see what user is expecting for brower to do
+     - to see what user is expecting in order to use this application
   2) make lists of each required action according to the user stories.
-    - make a logic step by step
+    - prioritizing things
   3) writing the code
 
 
 ## The story about development process and problem-solving strategy.
-   my process was
-   1) back-end side
-   2) front-end side
-   tried to check if all function is working in each steps before move on to the next steps.
-   for example, in front-end side, if I make shell file, i checked curl request, then move on to the html, event, ajax, and ui file.
-   when I had issue, I tried to think step by step and use console log a lot to see which function is working, and what is passing from which paramiter.
+   process:
+   I first work on back-end of the project, then worked on the front-end.
+
+   I used console to see which data is passing in the parameter and which steps
+   in the function is working.
 
 ## List unsolved problems which would be fixed in future iterations.
-  - make code DRY
   - styling
-  - calliing success update modal
-
 
 ## Link to wireframes
   https://i.imgur.com/vH1T6lx.jpg
 
-## user story
-  if I am a user
+## User story
+  If I am a user
   - I want to be able to save my email address and password
   - I want to be able to sign-in with the email and password that I registered before
   - I want to be able to change my password
   - I want to be able to sign-out
   - I want to be able to create the list
   - I want to be able to check the list I once created
-  - I want to be able to edit (add/delete items/ or edit dates)
-  - I want to be able to create a list when I'm looking at the existed list
+  - I want to be able to add/delete items or edit dates
   - I want the list to be in order by dates
-  - (i want to be able to see the items and experation date in each categories)
+  - I want to be able to search the items by Categories
